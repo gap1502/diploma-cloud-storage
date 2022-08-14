@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: migrations/users.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/user_1.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/user_2.sql
+      relativeToChangeLogFile: true
