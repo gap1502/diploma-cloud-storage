@@ -13,4 +13,12 @@ public class JwtAuthenticationRepository {
     public void putTokenAndUsername(String token, String username) {
         dataTokensAndUsernames.put(token, username);
     }
+
+    public void removeTokenAndUsername(String token) {
+        dataTokensAndUsernames.remove(token);
+    }
+
+    public String getUsernameByToken(String token) {
+        return dataTokensAndUsernames.get(token);
+    }
 }
