@@ -8,7 +8,6 @@ import ru.netology.cloudstorage.model.JwtRequest;
 import ru.netology.cloudstorage.model.JwtResponse;
 import ru.netology.cloudstorage.service.JwtAuthenticationService;
 
-
 @RestController
 @AllArgsConstructor
 public class JwtAuthenticationController {
@@ -21,8 +20,8 @@ public class JwtAuthenticationController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public ResponseEntity<?> logout(@RequestHeader("auth-token") String authtoken) {
-        jwtAuthenticationService.logoutAuthenticationTokenAndUsername(authtoken);
+    public ResponseEntity<?> logout(@RequestHeader("auth-token") String authToken) {
+        jwtAuthenticationService.logoutAuthenticationTokenAndUsername(authToken);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 }

@@ -1,10 +1,17 @@
 package ru.netology.cloudstorage.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 
+import java.util.List;
+
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class UserDao {
@@ -15,8 +22,11 @@ public class UserDao {
     @Column(nullable = false)
     private String password;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<File> userFiles;
+
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     public void setUsername(String username) {
@@ -24,10 +34,6 @@ public class UserDao {
     }
 
     public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+        return this.password;
     }
 }

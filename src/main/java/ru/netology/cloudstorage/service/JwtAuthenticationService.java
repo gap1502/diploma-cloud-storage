@@ -30,8 +30,8 @@ public class JwtAuthenticationService {
         return new JwtResponse(token);
     }
 
-    public void logoutAuthenticationTokenAndUsername(String authtoken) {
-        final String token = authtoken.substring(7);
+    public void logoutAuthenticationTokenAndUsername(String authToken) {
+        final String token = authToken.substring(7);
         final String username = jwtAuthenticationRepository.getUsernameByToken(token);
         System.out.println(username + " logout");
         jwtAuthenticationRepository.removeTokenAndUsername(token);
