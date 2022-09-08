@@ -22,7 +22,7 @@ public class ExceptionControllerAdvice {
     }
 
     @ExceptionHandler(InputDataException.class)
-    public ResponseEntity<ExceptionResponse> handleDataEntry (InputDataException e) {
+    public ResponseEntity<ExceptionResponse> handleInputData (InputDataException e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ExceptionResponse(e.getMessage(), 400));
     }
 
